@@ -86,10 +86,10 @@ public partial class DispatchTests
                 {
                     *(float4*)value = data[z, y, x];
 
-                    Assert.AreEqual(x / (float)buffer.Width, value[0], 0.000001f);
-                    Assert.AreEqual(y / (float)buffer.Height, value[1], 0.000001f);
-                    Assert.AreEqual(z / (float)buffer.Depth, value[2], 0.000001f);
-                    Assert.AreEqual(x / (float)buffer.Width, value[3], 0.000001f);
+                    Assert.AreEqual(x / (float)(buffer.Width - 1), value[0], 0.000001f);
+                    Assert.AreEqual(y / (float)(buffer.Height - 1), value[1], 0.000001f);
+                    Assert.AreEqual(z / (float)(buffer.Depth - 1), value[2], 0.000001f);
+                    Assert.AreEqual(x / (float)(buffer.Width - 1), value[3], 0.000001f);
                 }
             }
         }
