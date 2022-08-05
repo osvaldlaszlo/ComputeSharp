@@ -124,6 +124,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComputeSharp.NuGet", "Compu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputeSharp.Tests.DeviceLost", "tests\ComputeSharp.Tests.DeviceLost\ComputeSharp.Tests.DeviceLost.csproj", "{5DE90C85-ED26-4B5A-A0D7-2FF966A210AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeSharp.D2D1.Uwp", "src\ComputeSharp.D2D1.Uwp\ComputeSharp.D2D1.Uwp.csproj", "{3A1C1FFD-7941-4640-9113-F31468ACF86F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -348,6 +350,14 @@ Global
 		{5DE90C85-ED26-4B5A-A0D7-2FF966A210AC}.Release|ARM64.Build.0 = Release|Any CPU
 		{5DE90C85-ED26-4B5A-A0D7-2FF966A210AC}.Release|x64.ActiveCfg = Release|Any CPU
 		{5DE90C85-ED26-4B5A-A0D7-2FF966A210AC}.Release|x64.Build.0 = Release|Any CPU
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Debug|ARM64.Build.0 = Debug|ARM64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Debug|x64.ActiveCfg = Debug|x64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Debug|x64.Build.0 = Debug|x64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Release|ARM64.ActiveCfg = Release|ARM64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Release|ARM64.Build.0 = Release|ARM64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Release|x64.ActiveCfg = Release|x64
+		{3A1C1FFD-7941-4640-9113-F31468ACF86F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
