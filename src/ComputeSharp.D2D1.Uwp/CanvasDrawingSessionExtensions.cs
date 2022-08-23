@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using ComputeSharp.D2D1.Extensions;
 using ComputeSharp.D2D1.Interop;
 using ComputeSharp.D2D1.Uwp.Interop;
@@ -18,7 +19,9 @@ public static class CanvasDrawingSessionExtensions
     /// Draws a custom D2D1 pixel shader onto a target <see cref="CanvasDrawingSession"/> instance.
     /// </summary>
     /// <typeparam name="T">The type of D2D1 pixel shader to draw.</typeparam>
-    public static unsafe void DrawEffect<T>(this CanvasDrawingSession session)
+    /// <param name="session">The target <see cref="CanvasDrawingSession"/> instance to draw the effect on.</param>
+    /// <param name="mapperFactory">An optional factory of <see cref="ID2D1TransformMapper{T}"/> instances to use for the transform.</param>
+    public static unsafe void DrawEffect<T>(this CanvasDrawingSession session, Func<ID2D1TransformMapper<T>>? mapperFactory)
         where T : unmanaged, ID2D1PixelShader
     {
         // TODO: validate arguments
@@ -54,7 +57,7 @@ public static class CanvasDrawingSessionExtensions
         d2D1Factory.CopyTo(d2DFactory1.GetAddressOf()).Assert();
 
         // Register the effect for the target factory
-        D2D1PixelShaderEffect.RegisterForD2D1Factory1<T>(d2DFactory1.Get(), out _);
+        D2D1PixelShaderEffect.RegisterForD2D1Factory1(d2DFactory1.Get(), mapperFactory, out _);
 
         using ComPtr<ID2D1Effect> d2D1Effect = default;
 
